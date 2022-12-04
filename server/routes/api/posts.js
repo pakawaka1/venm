@@ -28,5 +28,12 @@ router.delete('/:id', async (req, res) => {
 })
 
 
+///connects to db
+const loadPostsCollection = async () => {
+    const client = await mongodb.MongoClient.connect('mongodb+srv://pakawaka1:Sonicyouth1!@cluster0.2drjp0l.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true 
+    });
+
+    return client.db('venm').collection('posts');
+}
 
 module.exports = router;
